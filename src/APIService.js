@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+//Change localhost:8000 or 127.0.0.1:8000 to https://todo-api-z4ug.onrender.com
+
 export default class APIService {
     static GetItems(token) {
-        return axios.get('http://localhost:8000/items/', {
+        return axios.get('https://todo-api-z4ug.onrender.com/items/', {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Token ${token['mytoken']}`
@@ -16,7 +18,7 @@ export default class APIService {
     }
 
     static UpdateItem(item_id, body, token) {
-        return fetch(`http://127.0.0.1:8000/items/${item_id}/`, {
+        return fetch(`https://todo-api-z4ug.onrender.com/items/${item_id}/`, {
             'method':'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +29,7 @@ export default class APIService {
     }
 
     static InsertItem(body, token) {
-        return fetch('http://127.0.0.1:8000/items/', {
+        return fetch('https://todo-api-z4ug.onrender.com/items/', {
             'method':'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -38,7 +40,7 @@ export default class APIService {
     }
 
     static DeleteItem(item_id, token) {
-        return fetch(`http://127.0.0.1:8000/items/${item_id}/`, {
+        return fetch(`https://todo-api-z4ug.onrender.com/items/${item_id}/`, {
         'method':'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -48,7 +50,7 @@ export default class APIService {
 }
 
 static LoginUser(body) {
-    return fetch('http://127.0.0.1:8000/auth/', {
+    return fetch('https://todo-api-z4ug.onrender.com/auth/', {
         'method':'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -58,7 +60,7 @@ static LoginUser(body) {
 }
 
 static RegisterUser(body) {
-    return fetch('http://127.0.0.1:8000/users/', {
+    return fetch('https://todo-api-z4ug.onrender.com/users/', {
         'method':'POST',
         headers: {
             'Content-Type': 'application/json',
